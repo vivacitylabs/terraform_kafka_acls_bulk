@@ -19,7 +19,12 @@ variable "acl_principal_suffix" {
 }
 
 variable "index" {
-  type = number
+  type        = number
+  description = "The index of this module instantiation. Assumes multiple copies of this module will be created using the count argument."
+  validation {
+    condition     = var.index >= 0
+    error_message = "Index must be >= 0."
+  }
 }
 
 variable "acls_per_batch" {
