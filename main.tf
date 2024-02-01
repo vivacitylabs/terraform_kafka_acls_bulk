@@ -5,7 +5,7 @@ locals {
 module "acl_batch" {
   count                        = local.number_of_batches
   source                       = "./acl-batch"
-  acl_count                    = var.acls_per_batch
+  acls_per_batch               = var.acls_per_batch
   index                        = count.index
   max_acl                      = var.max_acl
   resource_name                = var.resource_name

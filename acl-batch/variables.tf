@@ -22,11 +22,11 @@ variable "index" {
   type = number
 }
 
-variable "acl_count" {
+variable "acls_per_batch" {
   type = number
   validation {
-    condition     = var.acl_count > 0 && var.acl_count <= 5000
-    error_message = "0 < acl_count <= 5000; Higher numbers will be super slow to generate the tf state graph. Put a `count` argument on an instantiation of this module instead."
+    condition     = var.acls_per_batch > 0 && var.acls_per_batch <= 5000
+    error_message = "0 < acls_per_batch <= 5000; Higher numbers will be super slow to generate the tf state graph. Put a `count` argument on an instantiation of this module instead."
   }
 }
 
