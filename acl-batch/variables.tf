@@ -1,6 +1,10 @@
 variable "max_acl" {
   type        = number
   description = "The id of the highest ACL to apply. ACLs will be created up to and including this id."
+  validation {
+    condition     = var.max_acl >= 0
+    error_message = "Max ACL must be >= 0."
+  }
 }
 
 variable "resource_name" {
