@@ -1,0 +1,5 @@
+# To learn more about CODEOWNERS, see GitHub documentation:
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Replace with your team name
+* @vivacitylabs/infrastructure
