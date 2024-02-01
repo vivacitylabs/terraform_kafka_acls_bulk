@@ -3,7 +3,7 @@ locals {
 }
 
 resource "kafka_acl" "kafka_acl" {
-  count                        = min(var.max_acl, var.max_acl - local.offset)
+  count                        = min(var.acl_count, var.max_acl - local.offset)
   acl_permission_type          = var.acl_permission_type
   acl_principal                = "${var.acl_principal_prefix}${local.offset + count.index}${var.acl_principal_suffix}"
   acl_host                     = var.acl_host
