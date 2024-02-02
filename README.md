@@ -18,7 +18,7 @@ There is very little penalty to setting `-paralellism` too high, but there can b
 
 ## Usage
 
-### Minimal Configuration
+### Minimal configuration
 
 The example below contains all the required variables to create a vault connection.
 
