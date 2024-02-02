@@ -6,7 +6,7 @@ On each `terraform plan`, terraform builds a state graph of the resources in the
 Each node in the graph contains a copy of the state up to that node.
 When applying modules containing a large (>1000) number of resources, building the graph can become very slow.
 
-Fortunately, graphs are module-specific i.e. a separate graph is built for each module being applied.
+Fortunately, graphs are module-specific, i.e. a separate graph is built for each module being applied.
 This module leverages that to create multiple modules and split the resources between them.
 This significantly speeds up `terraform plan`s.
 
