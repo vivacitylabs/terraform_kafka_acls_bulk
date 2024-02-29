@@ -19,6 +19,16 @@ variable "max_acl" {
   }
 }
 
+variable "min_acl" {
+  type        = number
+  description = "The id of the lowest ACL to apply. ACLs will be created from this id inclusive."
+  validation {
+    condition     = var.min_acl >= 0
+    error_message = "Min ACL must be >= 0."
+  }
+  default = 0
+}
+
 variable "resource_name" {
   type        = string
   description = "The name of the resource being applied. When applying topics (the default), this is the topic name."

@@ -1,5 +1,5 @@
 locals {
-  offset = var.index * var.acls_per_batch
+  offset = (var.index * var.acls_per_batch) + var.min_acl
 }
 
 resource "kafka_acl" "kafka_acl" {
