@@ -54,6 +54,7 @@ module "acls" {
   acl_permission_type          = "Allow"
   resource_type                = "Topic"
   min_acl                      = 0
+  excluded_ids                 = [1, 2, 3] # defaults to []
 }
 ```
 
