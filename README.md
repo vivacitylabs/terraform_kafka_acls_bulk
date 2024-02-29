@@ -53,6 +53,7 @@ module "acls" {
   resource_pattern_type_filter = "Literal"
   acl_permission_type          = "Allow"
   resource_type                = "Topic"
+  min_acl                      = 0
 }
 ```
 

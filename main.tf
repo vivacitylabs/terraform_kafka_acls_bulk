@@ -1,5 +1,5 @@
 locals {
-  number_of_batches = ceil(var.max_acl / var.acls_per_batch)
+  number_of_batches = ceil((var.max_acl - var.min_acl) / var.acls_per_batch)
 }
 
 module "acl_batch" {
@@ -8,6 +8,7 @@ module "acl_batch" {
   acls_per_batch               = var.acls_per_batch
   index                        = count.index
   max_acl                      = var.max_acl
+  min_acl                      = var.min_acl
   resource_name                = var.resource_name
   acl_operation                = var.acl_operation
   acl_principal_prefix         = var.acl_principal_prefix
