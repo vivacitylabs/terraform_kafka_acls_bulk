@@ -91,3 +91,9 @@ variable "resource_type" {
     error_message = "Valid values: Unknown, Any, Topic, Group, Cluster, TransactionalID."
   }
 }
+
+variable "excluded_ids" {
+  type        = list(number)
+  description = "Do not create ACLs for ids passed into this list"
+  default     = []
+}
