@@ -1,6 +1,8 @@
 locals {
   offset = (var.index * var.acls_per_batch) + var.min_acl
-  ids    = setsubtract(toset(range(local.offset, min(var.acls_per_batch + local.offset, var.max_acl))), toset(var.excluded_ids))
+  ids = setsubtract(toset([
+    for id in range(local.offset, min(var.acls_per_batch + local.offset, var.max_acl)) : tostring(id)
+  ]), toset([for id in var.excluded_ids : tostring(id)]))
 }
 
 resource "kafka_acl" "kafka_acl" {
