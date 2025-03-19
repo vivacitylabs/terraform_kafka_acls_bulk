@@ -18,4 +18,5 @@ module "acl_batch" {
   resource_pattern_type_filter = var.resource_pattern_type_filter
   resource_type                = var.resource_type
   excluded_ids                 = var.excluded_ids
+  explicit_ids                 = var.explicit_ids
 }
