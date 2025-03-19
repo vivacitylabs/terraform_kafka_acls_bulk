@@ -6,7 +6,7 @@ locals {
 }
 
 resource "kafka_acl" "kafka_acl" {
-  for_each                     = local.ids
+  for_each                     = setunion(local.ids, var.explicit_ids)
   acl_permission_type          = var.acl_permission_type
   acl_principal                = "${var.acl_principal_prefix}${each.value}${var.acl_principal_suffix}"
   acl_host                     = var.acl_host
