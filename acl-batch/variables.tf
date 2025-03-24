@@ -95,9 +95,3 @@ variable "excluded_ids" {
   description = "Do not create ACLs for ids passed into this list"
   default     = []
 }
-
-variable "explicit_ids" {
-  type        = list(number)
-  description = "Include these IDs regardless of bulk iteration"
-  default     = []
-}
