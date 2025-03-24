@@ -17,6 +17,7 @@ variable "max_acl" {
     condition     = var.max_acl >= 0
     error_message = "Max ACL must be >= 0."
   }
+  default = 0
 }
 
 variable "min_acl" {
